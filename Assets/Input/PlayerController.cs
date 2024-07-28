@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     static public float dashLength = 5.0f;
     static public float dashRecovery = 3.0f;
     enum DashPhase {ACTIVE, RECOVERY, NONE};
-    [SerializeField] private DashPhase dashState = DashPhase.NONE;
+    private DashPhase dashState = DashPhase.NONE;
 
     private void Start()
     {
