@@ -142,6 +142,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6dc17986-f80f-45ed-a272-a853279db661
     m_ActionName: 'UI/Select[/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c260dce9-cba5-4e09-9dbb-b3897a03ce2e
+    m_ActionName: 'UI/Navigate[/XInputControllerWindows/leftStick/up]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: UI
