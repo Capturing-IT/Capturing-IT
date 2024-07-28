@@ -134,6 +134,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4a2e69e7-fd14-467a-8815-634d05446959
     m_ActionName: 'Player/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6479364884381683274}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7bde9870-243f-4af3-a4c5-c5a5ec368daf
+    m_ActionName: 'Player/Dash[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -152,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
+  startPosition: {x: 0, y: 0}
+  dashState: 2
 --- !u!61 &8160218109301646404
 BoxCollider2D:
   m_ObjectHideFlags: 0
