@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class FlagBehavior : MonoBehaviour
 {
-    bool isTaken = false;
+    private bool isTaken = false;
+
+    private Vector2 flagStartPosition;
 
     private void Start()
     {
+        flagStartPosition = new Vector2(36.27f, 1.58f);
 
+        transform.position = flagStartPosition;
     }
 
     void Update()
@@ -14,16 +18,17 @@ public class FlagBehavior : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.CompareTag("Player") && !isTaken)
-        { 
+        print("Colliding");
+
+        if (collider.gameObject.CompareTag("Player") && !isTaken)
+        {
             // Does player already have a flag? Is there some reason it shouldn't be able to pick up the flag
 
-            // teleport flag elsewhere
-            // set invisible
-            // activate hasflag on player
+            // activate hasflag on player?
 
+            pickUp(collider.gameObject.GetComponent<SpriteRenderer>());
         }
     }
 
@@ -42,10 +47,13 @@ public class FlagBehavior : MonoBehaviour
         playerFlagSprite.enabled = false;
     }
 
-    public void resetFlag()
+    public void resetFlag(SpriteRenderer playerFlagSprite)
     {
         isTaken = false;
-        // teleport to the middle
+
+        playerFlagSprite.enabled = false;
+
+        transform.position = flagStartPosition;
         // set active
             // Should the flag be invulnerable for a few seconds?
     }
