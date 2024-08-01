@@ -2047,9 +2047,17 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Join
         m_Flags: 0
+      - m_Name: 
+        m_Id: 3d391f53-41a7-45d0-837a-ba23a5206347
+        m_Path: <Keyboard>/e
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 2425219693081173161, guid: 10e6ce974a48b0f4093a332397fea277,
+  m_PlayerPrefab: {fileID: 2425219693081173161, guid: 665610334150627479831c185d9916be,
     type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
@@ -2098,6 +2106,9 @@ MonoBehaviour:
   - {fileID: 1532552853}
   - {fileID: 539926435}
   - {fileID: 995190934}
+  playerInputs: []
+  players: []
+  playerManager: {fileID: 0}
 --- !u!1 &1532552853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2366,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1674150410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1980275772}
+        m_TargetAssemblyTypeName: MenuButtonActions, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1674150410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,8 +2811,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1980275769}
-  - component: {fileID: 1980275768}
-  - component: {fileID: 1980275770}
+  - component: {fileID: 1980275771}
+  - component: {fileID: 1980275772}
   m_Layer: 0
   m_Name: MenuHandler
   m_TagString: Untagged
@@ -2797,24 +2820,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1980275768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980275767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a92d641ee196742afa74441ee809dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentButtonIdx: 0
-  currentButton: {fileID: 0}
-  buttons:
-  - {fileID: 1674150407}
-  - {fileID: 765924913}
-  - {fileID: 192991890}
 --- !u!4 &1980275769
 Transform:
   m_ObjectHideFlags: 0
@@ -2830,7 +2835,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1980275770
+--- !u!114 &1980275771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2839,84 +2844,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1980275767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: cce112401f1254c4c8cee42c14317d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 6df0e85ed1b0f5c4da609fd1537df609,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4a2e69e7-fd14-467a-8815-634d05446959
-    m_ActionName: 'Player/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/s,/Keyboard/d]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7bde9870-243f-4af3-a4c5-c5a5ec368daf
-    m_ActionName: 'Player/Dash[/Keyboard/space]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1980275768}
-        m_TargetAssemblyTypeName: ButtonSelectHandler, Assembly-CSharp
-        m_MethodName: SelectNextButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6dc17986-f80f-45ed-a272-a853279db661
-    m_ActionName: UI/Select
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1980275768}
-        m_TargetAssemblyTypeName: ButtonSelectHandler, Assembly-CSharp
-        m_MethodName: SelectNextButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c260dce9-cba5-4e09-9dbb-b3897a03ce2e
-    m_ActionName: UI/Navigate
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1980275768}
-        m_TargetAssemblyTypeName: ButtonSelectHandler, Assembly-CSharp
-        m_MethodName: SelectPreviousButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2fb6eb72-b671-4f08-a5f2-f6ef3ce85bdf
-    m_ActionName: UI/NavigatePrevious
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Controller
-  m_DefaultActionMap: UI
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  buttons:
+  - {fileID: 1674150407}
+  - {fileID: 765924913}
+  - {fileID: 192991890}
+--- !u!114 &1980275772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980275767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ada52dbb2ca654a9a683886a907b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010439338
 GameObject:
   m_ObjectHideFlags: 0

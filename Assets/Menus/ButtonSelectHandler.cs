@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonSelectHandler : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ButtonSelectHandler : MonoBehaviour
 
     private void Start()
     {
+        buttons = GameObject.Find("MenuHandler").GetComponent<ButtonHolder>().buttons;
         currentButton = buttons[currentButtonIdx];
     }
 
@@ -30,5 +32,10 @@ public class ButtonSelectHandler : MonoBehaviour
             currentButtonIdx = buttons.Length - 1;
         }
         currentButton = buttons[currentButtonIdx];
+    }
+
+    public void PressCurrentButton()
+    {
+        currentButton.GetComponent<Button>().onClick.Invoke();
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6479364884381683274}
   - component: {fileID: 8160218109301646404}
   - component: {fileID: 4425398567619556085}
+  - component: {fileID: 820534286847475416}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -152,13 +153,13 @@ MonoBehaviour:
     m_ActionName: 'Player/Dash[/Keyboard/space]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 820534286847475416}
+        m_TargetAssemblyTypeName: ButtonSelectHandler, Assembly-CSharp
+        m_MethodName: PressCurrentButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -166,9 +167,41 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6dc17986-f80f-45ed-a272-a853279db661
     m_ActionName: 'UI/Select[/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 820534286847475416}
+        m_TargetAssemblyTypeName: ButtonSelectHandler, Assembly-CSharp
+        m_MethodName: SelectNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c260dce9-cba5-4e09-9dbb-b3897a03ce2e
+    m_ActionName: 'UI/NavigateNext[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/right]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 820534286847475416}
+        m_TargetAssemblyTypeName: ButtonSelectHandler, Assembly-CSharp
+        m_MethodName: SelectPreviousButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2fb6eb72-b671-4f08-a5f2-f6ef3ce85bdf
+    m_ActionName: 'UI/NavigatePrevious[/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Controller
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &6479364884381683274
@@ -258,3 +291,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &820534286847475416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425219693081173161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a92d641ee196742afa74441ee809dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentButtonIdx: 0
+  currentButton: {fileID: 0}
+  buttons: []
